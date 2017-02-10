@@ -104,7 +104,7 @@ class UserController extends AdminController
                     \Yii::$app->user->login($userModel);
                     $userPasswordHistory->save();
 
-                    return $this->redirect(['/admin']);
+                    return $this->redirect(['/adminable']);
                 }
             }
         }
