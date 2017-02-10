@@ -16,6 +16,9 @@ $config = [
         'rbac' => [
             'class' => 'dektrium\rbac\Module',
         ],
+        'adminable' => [
+            'class' => 'app\modules\adminable\Module',
+        ],
     ],
     'components' => [
         'request' => [
