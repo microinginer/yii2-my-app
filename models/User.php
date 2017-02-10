@@ -10,4 +10,8 @@ use dektrium\user\models\User as BaseUser;
  */
 class User extends BaseUser
 {
+    public function getCorrectName()
+    {
+        return $this->profile->name ?: $this->username;
+    }
 }
