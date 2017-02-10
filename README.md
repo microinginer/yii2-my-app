@@ -13,3 +13,8 @@ Updating DB schema
 ```bash
 php yii cache/flush-schema
 ```
+
+```
+php yii rbac/create-role admin
+php yii assign/role username admin
+```
