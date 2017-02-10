@@ -22,7 +22,8 @@
         "dektrium/yii2-rbac": "0.3.0",
         "almasaeed2010/adminlte": "2.3.11",
         "kartik-v/yii2-widget-alert": "1.1.0",
-        "yiisoft/yii2-jui": "^2.0"
+        "yiisoft/yii2-jui": "^2.0",
+        "microinginer/yii2-human-formatter": "1.0.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
