@@ -4,6 +4,9 @@ namespace app\modules\adminable;
 
 /**
  * adminable module definition class
+ *
+ * Class Module
+ * @package app\modules\adminable
  */
 class Module extends \yii\base\Module
 {
@@ -18,7 +21,5 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-
-        // custom initialization code goes here
     }
 }
