@@ -9,12 +9,23 @@ $config = [
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
+            'layout' => '@app/modules/adminable/views/layouts/main',
             'modelMap' => [
                 'User' => 'app\models\User',
+            ],
+            'controllerMap' => [
+                'security' => 'app\modules\adminable\controllers\SecurityController',
+                'registration' => 'app\modules\adminable\controllers\RegistrationController',
+                'admin' => 'app\modules\adminable\controllers\UserController',
             ],
         ],
         'rbac' => [
             'class' => 'dektrium\rbac\Module',
+            'layout' => '@app/modules/adminable/views/layouts/main',
+            'controllerMap' => [
+                'role' => 'app\modules\adminable\controllers\RoleController',
+                'permission' => 'app\modules\adminable\controllers\PermissionController',
+            ],
         ],
         'adminable' => [
             'class' => 'app\modules\adminable\Module',
@@ -50,6 +61,16 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+            ],
+        ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@dektrium/user/views' => '@app/modules/adminable/views/user',
+                    '@dektrium/user/views/admin' => '@app/modules/adminable/views/users',
+                    '@dektrium/rbac/views/role' => '@app/modules/adminable/views/rbac/role',
+                    '@dektrium/rbac/views/permission' => '@app/modules/adminable/views/rbac/permission',
+                ],
             ],
         ],
     ],
