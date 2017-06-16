@@ -27,7 +27,7 @@ $this->title = 'Изменить пароль';
                 </div>
             </div>
             <div class="box-footer">
-                <?= \yii\bootstrap\Html::submitButton('Изменить', ['class' => 'btn btn-success pull-right']) ?>
+                <?= \yii\bootstrap\Html::submitButton('Изменить', ['class' => 'btn btn-primary pull-right']) ?>
                 <div class="clearfix"></div>
             </div>
         </div>

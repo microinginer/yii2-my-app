@@ -4,9 +4,13 @@
  * @var $this yii\web\View
  */
 
+use app\models\User;
 use app\modules\adminable\assets\AdminableAsset;
 
 AdminableAsset::register($this);
+
+/** @var User $userIdentity */
+$userIdentity = Yii::$app->user->identity;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -18,7 +22,7 @@ AdminableAsset::register($this);
     <title><?= yii\bootstrap\Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <?php $this->beginBody() ?>
 <div class="wrapper">
     <header class="main-header">
@@ -47,21 +51,21 @@ AdminableAsset::register($this);
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img
-                                    src="<?= Yii::$app->user->identity->profile->getAvatarUrl(50) ?>"
+                                    src="<?= $userIdentity->profile->getAvatarUrl(50) ?>"
                                     class="user-image" alt="User Image">
                             <span
                                     class="hidden-xs">
-                                <?= Yii::$app->user->identity->profile->name ?: Yii::$app->user->identity->username ?>
+                                <?= $userIdentity->profile->name ?: $userIdentity->username ?>
                             </span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
                                 <img
-                                        src="<?= Yii::$app->user->identity->profile->getAvatarUrl(240) ?>"
+                                        src="<?= $userIdentity->profile->getAvatarUrl(240) ?>"
                                         class="img-circle" alt="User Image">
                                 <p>
-                                    <?= Yii::$app->user->identity->profile->name ?: Yii::$app->user->identity->username ?>
+                                    <?= $userIdentity->profile->name ?: $userIdentity->username ?>
                                     <br>
                                     <small></small>
                                 </p>
@@ -87,11 +91,11 @@ AdminableAsset::register($this);
         <section class="sidebar" style="height: auto;">
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="<?= Yii::$app->user->identity->profile->getAvatarUrl(150) ?>"
+                    <img src="<?= $userIdentity->profile->getAvatarUrl(150) ?>"
                          class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p><?= Yii::$app->user->identity->profile->name ?: Yii::$app->user->identity->username ?></p>
+                    <p><?= $userIdentity->profile->name ?: $userIdentity->username ?></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -135,7 +139,7 @@ AdminableAsset::register($this);
 
     <div class="content-wrapper">
         <section class="content-header">
-            <h1><?= $this->title ?></h1>
+            <h1>&nbsp;</h1>
             <?= yii\widgets\Breadcrumbs::widget([
                 'homeLink' => [
                     'label' => 'Главная',

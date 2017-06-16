@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ]) ?>
 
 <!-- Default box -->
-<div class="box">
+<div class="box box-primary">
     <div class="box-header">
         <?= $this->render('/admin/_menu') ?>
     </div>
@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="form-group">
                             <div class="col-lg-offset-3 col-lg-9">
-                                <?= Html::submitButton(Yii::t('user', 'Save'), ['class' => 'btn btn-block btn-success']) ?>
+                                <?= Html::submitButton(Yii::t('user', 'Save'), ['class' => 'btn btn-block btn-primary']) ?>
                             </div>
                         </div>
 

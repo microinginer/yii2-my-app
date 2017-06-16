@@ -51,6 +51,7 @@ $config = [
             'errorAction' => 'site/error',
         ],
         'mailer' => require __DIR__ . '/mailer.php',
+        'formatter' => 'microinginer\humanFormatter\HumanFormatter',
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

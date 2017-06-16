@@ -14,6 +14,7 @@ class AdminableAsset extends AssetBundle
      * @var string
      */
     public $sourcePath = '@app/modules/adminable/public';
+
     /**
      * @var string
      */

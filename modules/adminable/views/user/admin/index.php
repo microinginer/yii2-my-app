@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'module' => Yii::$app->getModule('user'),
 ]) ?>
 
-<div class="box">
+<div class="box box-primary">
     <div class="box-header">
         <?= $this->render('/admin/_menu') ?>
     </div>
@@ -52,7 +52,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'ID',
                 'attribute' => 'id',
             ],
-            'profile.correctName',
+            'correctName',
+            'username',
             'email',
             [
                 'attribute' => 'registration_ip',
@@ -89,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         return '<div class="text-center"><span class="text-success">' . Yii::t('user', 'Confirmed') . '</span></div>';
                     } else {
                         return Html::a(Yii::t('user', 'Confirm'), ['confirm', 'id' => $model->id], [
-                            'class' => 'btn btn-xs btn-success btn-block',
+                            'class' => 'btn btn-xs btn-primary btn-block',
                             'data-method' => 'post',
                             'data-confirm' => Yii::t('user', 'Are you sure you want to confirm this user?'),
                         ]);
@@ -103,7 +104,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => function ($model) {
                     if ($model->isBlocked) {
                         return Html::a(Yii::t('user', 'Unblock'), ['block', 'id' => $model->id], [
-                            'class' => 'btn btn-xs btn-success btn-block',
+                            'class' => 'btn btn-xs btn-primary btn-block',
                             'data-method' => 'post',
                             'data-confirm' => Yii::t('user', 'Are you sure you want to unblock this user?'),
                         ]);

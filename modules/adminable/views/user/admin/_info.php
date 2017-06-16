@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var yii\web\View
+ * @var dektrium\user\models\User
+ */
 
 /*
  * This file is part of the Dektrium project
@@ -9,10 +13,7 @@
  * file that was distributed with this source code.
  */
 
-/**
- * @var yii\web\View
- * @var dektrium\user\models\User
- */
+
 ?>
 
 <?php $this->beginContent('@dektrium/user/views/admin/update.php', ['user' => $user]) ?>

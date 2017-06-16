@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ]) ?>
 
 <!-- Default box -->
-<div class="box">
+<div class="box box-primary">
     <div class="box-header">
         <?= $this->render('/admin/_menu') ?>
     </div>
