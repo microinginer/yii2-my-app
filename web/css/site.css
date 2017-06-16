@@ -21,3 +21,14 @@ body {
     font-size: 75px;
     font-weight: 200;
 }
+
+.site-index h1 small{
+    font-size: 20px;
+    position: relative;
+    top: -25px;
+}
+
+
+.site-index h1 small a:hover{
+text-decoration: none;
+}

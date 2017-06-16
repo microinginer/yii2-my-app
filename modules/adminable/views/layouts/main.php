@@ -6,6 +6,7 @@
 
 use app\models\User;
 use app\modules\adminable\assets\AdminableAsset;
+use yii\helpers\Url;
 
 AdminableAsset::register($this);
 
@@ -27,7 +28,7 @@ $userIdentity = Yii::$app->user->identity;
 <div class="wrapper">
     <header class="main-header">
         <!-- Logo -->
-        <a href="<?= \yii\helpers\Url::to(['/adminable']) ?>" class="logo">
+        <a href="<?= Url::to(['/adminable']) ?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b><?= Yii::$app->name[0] ?></b></span>
             <!-- logo for regular state and mobile devices -->
@@ -67,16 +68,17 @@ $userIdentity = Yii::$app->user->identity;
                                 <p>
                                     <?= $userIdentity->profile->name ?: $userIdentity->username ?>
                                     <br>
-                                    <small></small>
+                                    <small>Участник
+                                        с <?= Yii::$app->formatter->asDatetime($userIdentity->created_at) ?></small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <!--                                <div class="pull-left">-->
-                                <!--                                    <a href="#" class="btn btn-default btn-flat">Профиль</a>-->
-                                <!--                                </div>-->
+                                <div class="pull-left">
+                                    <a href="<?= Url::to(['/user/settings/']) ?>" class="btn btn-default btn-flat">Профиль</a>
+                                </div>
                                 <div class="pull-right">
-                                    <a href="<?= yii\helpers\Url::to(['/user/security/logout']) ?>" data-method="post"
+                                    <a href="<?= Url::to(['/user/security/logout']) ?>" data-method="post"
                                        class="btn btn-default btn-flat">Выход</a>
                                 </div>
                             </li>
