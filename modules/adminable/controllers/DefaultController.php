@@ -2,8 +2,8 @@
 
 namespace app\modules\adminable\controllers;
 
-use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\filters\AccessControl;
 
 /**
  * Default controller for the `adminable` module

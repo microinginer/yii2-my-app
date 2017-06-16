@@ -2,16 +2,28 @@
 
 namespace app\modules\adminable\controllers;
 
+use Yii;
 use yii\filters\AccessControl;
+use dektrium\rbac\controllers\PermissionController as BasePermissionController;
 
-class PermissionController extends \dektrium\rbac\controllers\PermissionController
+/**
+ * Class PermissionController
+ * @package app\modules\adminable\controllers
+ */
+class PermissionController extends BasePermissionController
 {
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         parent::init();
-        \Yii::$app->getModule('rbac')->detachBehavior('access');
+        Yii::$app->getModule('rbac')->detachBehavior('access');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [

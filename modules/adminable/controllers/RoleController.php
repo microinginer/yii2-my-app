@@ -1,28 +1,31 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: inginer
- * Date: 17.03.16
- * Time: 17:09
- */
 
 namespace app\modules\adminable\controllers;
 
 
+use Yii;
 use yii\filters\AccessControl;
-use yii\rbac\Item;
-use yii\rbac\Role;
-use yii\web\NotFoundHttpException;
+use dektrium\rbac\controllers\RoleController as BaseRoleController;
 
-class RoleController extends \dektrium\rbac\controllers\RoleController
+/**
+ * Class RoleController
+ * @package app\modules\adminable\controllers
+ */
+class RoleController extends BaseRoleController
 {
 
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
         parent::init();
-        \Yii::$app->getModule('rbac')->detachBehavior('access');
+        Yii::$app->getModule('rbac')->detachBehavior('access');
     }
 
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [

@@ -3,14 +3,17 @@
 namespace app\modules\adminable\controllers;
 
 use app\models\User;
-use app\models\UserPasswordHistory;
-use dektrium\user\controllers\AdminController;
-use dektrium\user\helpers\Password;
 use yii\base\DynamicModel;
 use yii\filters\AccessControl;
+use app\models\UserPasswordHistory;
+use dektrium\user\helpers\Password;
+use dektrium\user\controllers\AdminController;
 
 class UserController extends AdminController
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
