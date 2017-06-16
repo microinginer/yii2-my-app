@@ -6,16 +6,20 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'app\components\PasswordChecker'],
+    'language' => 'ru',
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
             'layout' => '@app/modules/adminable/views/layouts/main',
             'modelMap' => [
                 'User' => 'app\models\User',
+                'Profile' => 'app\models\Profile',
+                'Token' => 'app\models\Token',
             ],
             'controllerMap' => [
                 'security' => 'app\modules\adminable\controllers\SecurityController',
                 'registration' => 'app\modules\adminable\controllers\RegistrationController',
+                'recovery' => 'app\modules\adminable\controllers\RecoveryController',
                 'admin' => 'app\modules\adminable\controllers\UserController',
             ],
         ],

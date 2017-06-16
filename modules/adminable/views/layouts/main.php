@@ -111,11 +111,20 @@ AdminableAsset::register($this);
                 'activateParents' => true,
                 'items' => [
                     ['label' => 'Навигация', 'options' => ['class' => 'header']],
-//                    [
-//                        'label' => yii\bootstrap\Html::tag('i', '', ['class' => 'fa fa-file']) . ' &nbsp; ' .
-//                            yii\bootstrap\Html::tag('span', Yii::t('app', 'Заявки')),
-//                        'url' => ['/adminable/request/index'],
-//                    ],
+                    [
+                        'label' => yii\bootstrap\Html::tag('i', '', ['class' => 'ion-ios-people']) . ' &nbsp; ' .
+                            yii\bootstrap\Html::tag('span', Yii::t('app', 'Пользователи')),
+                        'url' => ['/user/admin'],
+                        'template' => '<a href="{url}" >{label}<i class="fa fa-angle-left pull-right"></i></a>',
+                        'visible' => Yii::$app->user->can('admin'),
+                        'options' => ['class' => 'treeview'],
+                        'items' => [
+                            ['label' => Yii::t('app', 'Список пользователей'), 'url' => ['/user/admin/index'],],
+                            ['label' => Yii::t('rbac', 'Roles'), 'url' => ['/rbac/role/index'],],
+                            ['label' => Yii::t('rbac', 'Permissions'), 'url' => ['/rbac/permission/index'],],
+                        ],
+                    ],
+
                 ],
                 'submenuTemplate' => "\n<ul class='treeview-menu'>\n{items}\n</ul>\n",
                 'encodeLabels' => false, //allows you to use html in labels

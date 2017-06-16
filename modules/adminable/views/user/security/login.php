@@ -42,7 +42,16 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= $form
             ->field($model, 'password', ['inputOptions' => ['class' => 'form-control', 'tabindex' => '2']])
             ->passwordInput()
-            ->label(Yii::t('user', 'Password')) ?>
+            ->label(
+                Yii::t('user', 'Password')
+                . ($module->enablePasswordRecovery ?
+                    ' (' . Html::a(
+                        Yii::t('user', 'Forgot password?'),
+                        ['/user/recovery/request'],
+                        ['tabindex' => '5']
+                    )
+                    . ')' : '')
+            )  ?>
 
         <div class="row">
             <div class="col-xs-8">
@@ -50,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
-                <?= Html::submitButton('Войти', ['class' => 'btn btn-default btn-block', 'tabindex' => '3']) ?>
+                <?= Html::submitButton(Yii::t('app', 'Войти'), ['class' => 'btn btn-default btn-block', 'tabindex' => '3']) ?>
             </div>
             <!-- /.col -->
         </div>
