@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\models\user;
 
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;

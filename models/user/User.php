@@ -1,13 +1,13 @@
 <?php
 
-namespace app\models;
+namespace app\models\user;
 
-use dektrium\user\models\User as BaseUser;
 use yii\helpers\ArrayHelper;
+use dektrium\user\models\User as BaseUser;
 
 /**
  * Class User
- * @package app\models
+ * @package app\models\user
  */
 class User extends BaseUser
 {

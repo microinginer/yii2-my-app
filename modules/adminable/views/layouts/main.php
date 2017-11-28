@@ -4,7 +4,7 @@
  * @var $this yii\web\View
  */
 
-use app\models\User;
+use app\models\user\User;
 use app\modules\adminable\assets\AdminableAsset;
 use yii\helpers\Url;
 

@@ -2,10 +2,9 @@
 
 namespace app\components;
 
-
-use app\models\UserPasswordHistory;
 use yii\base\Application;
 use yii\base\BootstrapInterface;
+use app\models\user\UserPasswordHistory;
 
 /**
  * Class PasswordChecker
@@ -21,14 +20,17 @@ class PasswordChecker implements BootstrapInterface
     {
         if (null !== $app->user->identity) {
 
+            /** @var UserPasswordHistory $passwordHistory */
             $passwordHistory = UserPasswordHistory::find()
                 ->where(['created_by' => $app->user->id])
                 ->orderBy(['id' => SORT_DESC])
                 ->one();
 
             if (null === $passwordHistory || $passwordHistory->created_at < (time() - 86400 * 30)) {
-                if (false === strrpos($app->request->pathInfo, 'change-password')) {
-                    $app->response->redirect(['/user/admin/change-password']);
+                if (false === strrpos($app->getRequest()->getPathInfo(), 'change-password')) {
+                    $app
+                        ->getResponse()
+                        ->redirect(['/user/admin/change-password']);
                 }
             }
         }

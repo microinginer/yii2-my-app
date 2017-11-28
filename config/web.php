@@ -12,9 +12,9 @@ $config = [
             'class' => 'dektrium\user\Module',
             'layout' => '@app/modules/adminable/views/layouts/main',
             'modelMap' => [
-                'User' => 'app\models\User',
-                'Profile' => 'app\models\Profile',
-                'Token' => 'app\models\Token',
+                'User' => 'app\models\user\User',
+                'Profile' => 'app\models\user\Profile',
+                'Token' => 'app\models\user\Token',
             ],
             'controllerMap' => [
                 'security' => 'app\modules\adminable\controllers\SecurityController',
@@ -44,7 +44,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\user\User',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [

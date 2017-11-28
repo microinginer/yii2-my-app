@@ -4,7 +4,7 @@ namespace app\commands;
 
 
 use Yii;
-use app\models\User;
+use app\models\user\User;
 use yii\base\ErrorException;
 use yii\console\Controller;
 

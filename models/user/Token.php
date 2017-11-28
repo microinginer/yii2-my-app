@@ -1,13 +1,13 @@
 <?php
 
-namespace app\models;
+namespace app\models\user;
 
 
 use dektrium\user\models\Token as BaseToken;
 
 /**
  * Class Token
- * @package app\models
+ * @package app\models\user
  */
 class Token extends BaseToken
 {
