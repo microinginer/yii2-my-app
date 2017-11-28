@@ -2,6 +2,7 @@
 
 use app\modules\adminable\widgets\social\SocialConnect;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /**
@@ -17,11 +18,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?= \yii\helpers\Url::to(['/']) ?>"><b>Admin</b>able</a>
+        <a href="<?= Url::to(['/']) ?>"><b>Admin</b>able</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
         <p class="login-box-msg"><?= $this->title ?></p>
 
         <?php $form = ActiveForm::begin([

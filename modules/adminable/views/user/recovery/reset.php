@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -21,25 +22,23 @@ use yii\widgets\ActiveForm;
 $this->title = Yii::t('user', 'Reset your password');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
-            </div>
-            <div class="panel-body">
-                <?php $form = ActiveForm::begin([
-                    'id' => 'password-recovery-form',
-                    'enableAjaxValidation' => true,
-                    'enableClientValidation' => false,
-                ]); ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="<?= Url::to(['/']) ?>"><b>Admin</b>able</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <?php $form = ActiveForm::begin([
+            'id' => 'password-recovery-form',
+            'enableAjaxValidation' => true,
+            'enableClientValidation' => false,
+        ]); ?>
 
-                <?= Html::submitButton(Yii::t('user', 'Finish'), ['class' => 'btn btn-primary btn-block']) ?><br>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
-                <?php ActiveForm::end(); ?>
-            </div>
-        </div>
+        <?= Html::submitButton(Yii::t('user', 'Finish'), ['class' => 'btn btn-primary btn-block']) ?><br>
+
+        <?php ActiveForm::end(); ?>
     </div>
 </div>

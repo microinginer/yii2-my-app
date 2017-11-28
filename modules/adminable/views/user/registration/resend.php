@@ -9,17 +9,16 @@
  * file that was distributed with this source code.
  */
 
-use yii\helpers\Url;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var yii\widgets\ActiveForm $form
- * @var dektrium\user\models\RecoveryForm $model
+ * @var dektrium\user\models\ResendForm $model
  */
 
-$this->title = Yii::t('user', 'Recover your password');
+$this->title = Yii::t('user', 'Request new confirmation message');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="login-box">
@@ -28,10 +27,9 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
         <p class="login-box-msg"><?= $this->title ?></p>
         <?php $form = ActiveForm::begin([
-            'id' => 'password-recovery-form',
+            'id' => 'resend-form',
             'enableAjaxValidation' => true,
             'enableClientValidation' => false,
         ]); ?>
@@ -41,8 +39,5 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-primary btn-block']) ?><br>
 
         <?php ActiveForm::end(); ?>
-        <div align="center">
-            <?= Html::a(Yii::t('user', 'Already registered? Sign in!'), ['/user/security/login']) ?>
-        </div>
     </div>
 </div>
