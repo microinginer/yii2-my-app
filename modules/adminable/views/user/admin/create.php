@@ -24,10 +24,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 
-<?= $this->render('/_alert', [
-    'module' => Yii::$app->getModule('user'),
-]) ?>
-
 <!-- Default box -->
 <div class="box box-primary">
     <div class="box-header">

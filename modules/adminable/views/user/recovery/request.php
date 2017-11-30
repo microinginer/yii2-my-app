@@ -28,7 +28,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <?= $this->render('/_alert', ['module' => Yii::$app->getModule('user')]) ?>
         <p class="login-box-msg"><?= $this->title ?></p>
         <?php $form = ActiveForm::begin([
             'id' => 'password-recovery-form',
