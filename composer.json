@@ -15,7 +15,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.1",
-        "yiisoft/yii2": "2.0.12",
+        "yiisoft/yii2": "2.0.14",
         "yiisoft/yii2-bootstrap": "2.0.7",
         "yiisoft/yii2-swiftmailer": "2.0.7",
         "dektrium/yii2-user": "0.9.12",
