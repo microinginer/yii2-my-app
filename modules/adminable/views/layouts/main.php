@@ -4,9 +4,12 @@
  * @var $this yii\web\View
  */
 
-use app\models\user\User;
-use app\modules\adminable\assets\AdminableAsset;
 use yii\helpers\Url;
+use yii\widgets\Menu;
+use yii\bootstrap\Html;
+use app\models\user\User;
+use kartik\alert\AlertBlock;
+use app\modules\adminable\assets\AdminableAsset;
 
 AdminableAsset::register($this);
 
@@ -19,8 +22,8 @@ $userIdentity = Yii::$app->user->identity;
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <?= yii\bootstrap\Html::csrfMetaTags() ?>
-    <title><?= yii\bootstrap\Html::encode($this->title) ?></title>
+    <?= Html::csrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -112,14 +115,14 @@ $userIdentity = Yii::$app->user->identity;
               </span>
                 </div>
             </form>
-            <?= yii\widgets\Menu::widget([
+            <?= Menu::widget([
                 'options' => ['class' => 'sidebar-menu'],
                 'activateParents' => true,
                 'items' => [
                     ['label' => 'Навигация', 'options' => ['class' => 'header']],
                     [
-                        'label' => yii\bootstrap\Html::tag('i', '', ['class' => 'ion-ios-people']) . ' &nbsp; ' .
-                            yii\bootstrap\Html::tag('span', Yii::t('app', 'Пользователи')),
+                        'label' => Html::tag('i', '', ['class' => 'ion-ios-people']) . ' &nbsp; ' .
+                            Html::tag('span', Yii::t('app', 'Пользователи')),
                         'url' => ['/user/admin'],
                         'template' => '<a href="{url}" >{label}<i class="fa fa-angle-left pull-right"></i></a>',
                         'visible' => Yii::$app->user->can('admin'),
@@ -151,8 +154,8 @@ $userIdentity = Yii::$app->user->identity;
             ]) ?>
         </section>
         <section class="content">
-            <?= \kartik\alert\AlertBlock::widget([
-                'type' => \kartik\alert\AlertBlock::TYPE_ALERT,
+            <?= AlertBlock::widget([
+                'type' => AlertBlock::TYPE_ALERT,
                 'useSessionFlash' => true
             ]); ?>
             <?= $content ?>
@@ -160,7 +163,7 @@ $userIdentity = Yii::$app->user->identity;
         </section>
     </div>
     <footer class="main-footer">
-        Создано <?= yii\bootstrap\Html::a('yashr team', 'http://yashr.ru') ?>
+        Создано <?= Html::a('yashr team', 'http://yashr.ru') ?>
     </footer>
 </div>
 <?php $this->endBody() ?>
