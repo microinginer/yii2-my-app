@@ -8,6 +8,7 @@ use yii\helpers\Url;
 use yii\widgets\Menu;
 use yii\bootstrap\Html;
 use app\models\user\User;
+use yii\widgets\Breadcrumbs;
 use kartik\alert\AlertBlock;
 use app\modules\adminable\assets\AdminableAsset;
 
@@ -145,10 +146,10 @@ $userIdentity = Yii::$app->user->identity;
     <div class="content-wrapper">
         <section class="content-header">
             <h1>&nbsp;</h1>
-            <?= yii\widgets\Breadcrumbs::widget([
+            <?= Breadcrumbs::widget([
                 'homeLink' => [
                     'label' => 'Главная',
-                    'url' => ['/admin/default/index'],
+                    'url' => ['/adminable/default/index'],
                 ],
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
