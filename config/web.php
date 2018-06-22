@@ -7,6 +7,11 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'ru',
+    'sourceLanguage' => 'ru-RU',
+    'aliases' => [
+        '@bower' => '@vendor/bower-assets',
+        '@npm'   => '@vendor/npm-assets',
+    ],
     'modules' => [
         'user' => [
             'class' => 'dektrium\user\Module',
@@ -24,11 +29,12 @@ $config = [
             ],
         ],
         'rbac' => [
-            'class' => 'dektrium\rbac\Module',
+            'class' => 'dektrium\rbac\RbacWebModule',
             'layout' => '@app/modules/adminable/views/layouts/main',
             'controllerMap' => [
                 'role' => 'app\modules\adminable\controllers\RoleController',
                 'permission' => 'app\modules\adminable\controllers\PermissionController',
+                'rule' => 'app\modules\adminable\controllers\RuleController',
             ],
         ],
         'adminable' => [
@@ -39,6 +45,9 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '5wF-LYT6jxVc3lfc3ytHCXNpHXQBU-JG',
+        ],
+        'authManager' => [
+            'class' => 'dektrium\rbac\components\DbManager',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -75,6 +84,7 @@ $config = [
                     '@dektrium/user/views/admin' => '@app/modules/adminable/views/users',
                     '@dektrium/rbac/views/role' => '@app/modules/adminable/views/rbac/role',
                     '@dektrium/rbac/views/permission' => '@app/modules/adminable/views/rbac/permission',
+                    '@dektrium/rbac/views/rule' => '@app/modules/adminable/views/rbac/rule',
                 ],
             ],
         ],

@@ -14,18 +14,18 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.1",
-        "yiisoft/yii2": "2.0.14",
-        "yiisoft/yii2-bootstrap": "2.0.7",
-        "yiisoft/yii2-swiftmailer": "2.0.7",
-        "dektrium/yii2-user": "0.9.12",
-        "dektrium/yii2-rbac": "0.3.0",
-        "almasaeed2010/adminlte": "2.3.11",
-        "kartik-v/yii2-widget-alert": "1.1.0",
+        "php": ">=7.2",
+        "yiisoft/yii2": "~2.0.15.1",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "dektrium/yii2-user": "^0.9",
+        "dektrium/yii2-rbac": "^1.0",
+        "almasaeed2010/adminlte": "^2.4",
+        "kartik-v/yii2-widget-alert": "^1.1",
         "yiisoft/yii2-jui": "^2.0",
-        "microinginer/yii2-human-formatter": "1.0.0",
-        "microinginer/yii2-dropdown-action-column": "1.0.2",
-        "vlucas/phpdotenv": "2.4.0"
+        "microinginer/yii2-human-formatter": "^1.0",
+        "microinginer/yii2-dropdown-action-column": "^1.0",
+        "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
@@ -33,6 +33,12 @@
         "yiisoft/yii2-faker": "~2.0.0"
     },
     "config": {
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
         "process-timeout": 1800
     },
     "scripts": {
@@ -52,10 +58,6 @@
             "generateCookieValidationKey": [
                 "config/web.php"
             ]
-        },
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
         }
     }
 }

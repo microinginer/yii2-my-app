@@ -12,13 +12,14 @@ $config = [
         'user' => [
             'class' => 'dektrium\user\Module',
         ],
+        'rbac' => 'dektrium\rbac\RbacConsoleModule',
     ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'authManager' => [
-            'class' => 'yii\rbac\DbManager',
+            'class' => 'dektrium\rbac\components\DbManager',
         ],
         'log' => [
             'targets' => [

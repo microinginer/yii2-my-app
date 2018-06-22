@@ -132,6 +132,7 @@ $userIdentity = Yii::$app->user->identity;
                             ['label' => Yii::t('app', 'Список пользователей'), 'url' => ['/user/admin/index'],],
                             ['label' => Yii::t('rbac', 'Roles'), 'url' => ['/rbac/role/index'],],
                             ['label' => Yii::t('rbac', 'Permissions'), 'url' => ['/rbac/permission/index'],],
+                            ['label' => Yii::t('rbac', 'Rules'), 'url' => ['/rbac/rule/index'],],
                         ],
                     ],
 
