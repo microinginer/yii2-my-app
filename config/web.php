@@ -9,8 +9,8 @@ $config = [
     'language' => 'ru',
     'sourceLanguage' => 'ru-RU',
     'aliases' => [
-        '@bower' => '@vendor/bower-assets',
-        '@npm'   => '@vendor/npm-assets',
+//        '@bower' => '@vendor/bower-assets',
+//        '@npm'   => '@vendor/npm-assets',
     ],
     'modules' => [
         'user' => [
